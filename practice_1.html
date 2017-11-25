@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSL1</title>
+    <style>
+        div {
+            border: 1px solid red;
+            width: 500px;
+            height: 300px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var i = 0;
+        function  changeImg() {
+            i++;
+            if (i==4) {
+                i = 1;
+            }
+            document.getElementById("img").src = "img/" + i + ".jpg";
+        }
+
+        function init() {
+            setInterval("changeImg()", 3000);
+        }
+
+
+    </script>
+</head>
+<body onload="init()">
+<div id="">
+    <!--<input type="button" value="下一张" onclick="changeImg()"/>-->
+    <img src="img/1.jpg" width="100%" id="img"/>
+    <a href="practice_2.html">点我</a>
+
+</div>
+</body>
+</html>
