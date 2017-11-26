@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>商城首页</title>
-    <script>
+    <!--<script>
         function checkForm() {
             /*获取用户名*/
             var uValue = document.getElementById("user").value;
@@ -26,6 +26,19 @@
             if (!/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(eValue)) {
                 alert("Email格式错误");
                 return false;
+            }
+        }
+    </script>-->
+    <script>
+        function showTips(id,info) {
+            document.getElementById(id+'Tips').innerHTML="<font color='gray'>"+info+"</font>";
+        }
+        function check(id,info) {
+            var uValue = document.getElementById(id).value; //不要忘记使用.value;
+            if (uValue == "") {
+                document.getElementById(id+'Tips').innerHTML = "<font color='red'>"+info+"</font>"
+            } else {
+                document.getElementById(id+'Tips').innerHTML = ""
             }
         }
     </script>
@@ -73,25 +86,34 @@
                     <tr>
                         <td>用户名</td>
                         <td>
-                            <input type="text" name="username" size="34px" id="user"/>
+                            <font color="red">*</font><input type="text" name="username" size="34px" id="user" onfocus="showTips('user','用户名必填')" onblur="check('user','不能为空')"/>
+                            <span id="userTips"></span>
 
                         </td>
                     </tr>
 
                     <tr>
                         <td>密码</td>
-                        <td><input type="password" name="password" id="password" size="34px"></td>
+                        <td>
+                            <input type="password" name="password" id="password" size="34px" onblur="check('password','密码不能为空')" onfocus="showTips('password','必填')">
+                            <span id="passwordTips"></span>
+                        </td>
+
                     </tr>
 
                     <tr>
                         <td>确认密码</td>
-                        <td><input type="password" name="repassword" size="34px" id="repassword"></td>
+                        <td>
+                            <input type="password" name="repassword" size="34px" id="repassword" onblur="check('repassword','哈哈哈')" onfocus="showTips('repassword','必填')" >
+                            <span id="repasswordTips"></span>
+                        </td>
                     </tr>
 
                     <tr>
                         <td>Email</td>
                         <td>
-                            <input type="text" name="email" size="34px" id="email">
+                            <input type="text" name="email" size="34px" id="email" onfocus="showTips('email','必填')" >
+                            <span id="emailTips"></span>
                         </td>
                     </tr>
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <script>
+        function changeBGColor() {
+            var tbody = document.getElementById("table").children;
+            for (var i = 0; i < length; ++i) {
+                if (i % 2 == 0) {
+                    tbody[i].style.backgroundColor = "red";
+                } else {
+                    tbody[i].style.backgroundColor = "blue";
+                }
+            }
+
+        }
+    </script>
+</head>
+<body onload="changeBGColor()">
+<table border="1" id="table_1">
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+    </tr>
+    </thead>
+    <tbody id="table">
+    <tr>
+        <td>1</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
