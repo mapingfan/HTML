@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>商城首页</title>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/messages_zh.js"></script>
     <!--<script>
         function checkForm() {
             /*获取用户名*/
@@ -30,7 +33,7 @@
         }
     </script>-->
     <script>
-        function showTips(id,info) {
+        /*function showTips(id,info) {
             document.getElementById(id+'Tips').innerHTML="<font color='gray'>"+info+"</font>";
         }
         function check(id,info) {
@@ -40,7 +43,43 @@
             } else {
                 document.getElementById(id+'Tips').innerHTML = ""
             }
-        }
+        }*/
+
+        $(function () {
+            $("#registerForm").validate({
+                rules: {
+                    username: {
+                        required: true,
+                        minlength: 6
+                    },
+                    password: {
+                        required: true,
+                        minlength: 6
+                    },
+                    repassword: {
+                        required: true,
+                        minlength: 6,
+                        equalTo: "[name='password']",
+                    }
+                },
+                messages: {
+                    username: {
+                        required: "用户名不能为空",
+                        minlength: "不能小于6位",
+
+                    },
+                    password: {
+                        required: "密码必须填",
+                        minlength: "密码不能少于6位"
+                    },
+                    repassword: {
+                        required: "必须填",
+                        minlength: "至少6位",
+                        equalTo: "两次不等",
+                    }
+                }
+            });
+        });
     </script>
 </head>
 <body>
@@ -76,7 +115,7 @@
 
     <tr>
         <td height="600px" background="img/regist_bg.jpg">
-            <form action="" method="post" onsubmit="return checkForm()">
+            <form action="" method="post" id="registerForm" onsubmit="return checkForm()">
                 <table bgcolor="white" border="1px" width="750px" height="360px" align="center" cellspacing="0px"
                        cellpadding="0px">
                     <tr height="40px">
@@ -86,7 +125,7 @@
                     <tr>
                         <td>用户名</td>
                         <td>
-                            <font color="red">*</font><input type="text" name="username" size="34px" id="user" onfocus="showTips('user','用户名必填')" onblur="check('user','不能为空')"/>
+                            <font color="red">*</font><input type="text" name="username" size="34px" id="user" />
                             <span id="userTips"></span>
 
                         </td>
