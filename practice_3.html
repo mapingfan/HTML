@@ -4,19 +4,36 @@
     <meta charset="UTF-8">
     <title>Window对象</title>
     <script>
-//        <!--确认弹出框-->
-//        confirm("确定是否删除?");
-////        提示框
-//        prompt("输入名字");
-
-        function prePage() {
-//            history.go(-1);
-            history.back();
+        window.onload = function () {  //不能写成document.onload；切记
+            document.getElementById("btn").onclick = function () {
+                var list = document.getElementById("city");
+                var liElement = document.createElement("li");
+                var textElement = document.createTextNode("广东");
+/*
+//                liElement.innerHTML = "广东";
+*/
+                liElement.appendChild(textElement);
+                list.appendChild(liElement);
+            }
         }
+        /*function addCity() {
+            var list = document.getElementById("city");
+            var liElement = document.createElement("li");
+            liElement.innerHTML = "广东";
+            list.appendChild(liElement);
+        }*/
     </script>
 </head>
 <body>
-    <input type="button" value="返回上一页" onclick="prePage()">
-<input type="button" value="跳转到上一页" onclick="javascript:location.href='practice_1.html'">
+<input type="button" id="btn" value="添加">
+
+<ul id="city">
+    <li>
+        北京
+    </li>
+    <li>
+        上海
+    </li>
+</ul>
 </body>
 </html>

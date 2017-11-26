@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window对象</title>
+    <script>
+        window.onload = function () {
+            var body = document.getElementsByTagName("body")[0];
+            var select = document.createElement("select");
+            var opt = document.createElement("option");
+            opt.innerHTML = "请选择"
+            select.appendChild(opt);
+            body.appendChild(select);
+        }
+
+        function trigger(value) {
+            var body = document.getElementsByTagName("body")[0];
+            var child = document.getElementsByTagName("select")[1];
+            body.removeChild(child);
+            var select = document.createElement("select");
+            body.appendChild(select);
+            if (value == '0') {
+                    var opt = document.createElement("option");
+                    opt.innerHTML = "请选择省份"
+                    select.appendChild(opt);
+            }
+            if (value == '1') {
+
+                for (var i = 0; i < 10; i++) {
+                    var opt = document.createElement("option");
+                    opt.innerHTML = "BJ";
+                    select.appendChild(opt);
+                }
+            }
+            if (value == '2') {
+                for (var i = 0; i < 10; i++) {
+                    var opt = document.createElement("option");
+                    opt.innerHTML = "SH";
+                    select.appendChild(opt);
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+<select onchange="trigger(this.value)">
+    <option value="0">请选择</option>
+    <option value="1">北京</option>
+    <option value="2">上海</option>
+</select>
+
+</body>
+</html>
