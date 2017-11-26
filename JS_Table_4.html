@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function () {
+            $("#true").click(function () {
+                $("tbody input").attr("checked",this.checked);
+            });
+        });
+    </script>
+</head>
+<body onload="init()">
+<table border="1">
+    <thead>
+    <tr>
+        <th>
+            <input type="checkbox" id="true" >全选
+<!--
+            <input type="checkbox" id="false" onclick="reverseChooseAll()">取消全选
+-->
+        </th>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+    </tr>
+    </thead>
+    <tbody id="table">
+    <tr onmouseover="highlight('tr1','over')" onmouseout="highlight('tr1','out')">
+        <td><input type="checkbox"></td>
+        <td>1</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr onmouseover="highlight('tr2','over')" onmouseout="highlight('tr2','out')">
+        <td><input type="checkbox"></td>
+        <td>2</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr onmouseover="highlight('tr3','over')" onmouseout="highlight('tr3','out')">
+        <td><input type="checkbox"></td>
+        <td>3</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr onmouseover="highlight('tr4','over')" onmouseout="highlight('tr4','out')">
+        <td><input type="checkbox"></td>
+        <td>3</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr onmouseover="highlight('tr5','over')" onmouseout="highlight('tr5','out')">
+        <td><input type="checkbox"></td>
+        <td>3</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr onmouseover="highlight('tr6','over')" onmouseout="highlight('tr6','out')">
+        <td><input type="checkbox"></td>
+        <td>3</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
