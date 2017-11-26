@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery</title>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script>
+//        JQ里无法操作DOM的属性和方法，必须用自己的
+//        DOM也无法操纵JQ里的属性和方法
+        $(function () {
+            $("#btn").click(function () {
+//                $("#content").html("烦烦烦");
+//                jq--->DOM对象转换，通过get；
+                $("#content").get(0).innerHTML = "fff";
+                $("#content")[0].innerHTML = "ggg";  //加0为了保险
+            });
+        });
+
+        function jswrite() {
+//            DOM --->jq对象转换，通过get；
+//            document.getElementById("content").innerHTML = "哈哈哈";
+            var element = document.getElementById("content");
+            $(element).html("555");
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" value="JS写入" onclick="jswrite()">
+    <input type="button" value="JQ写入" id="btn">
+    班长：<span id="content">你好帅</span>
+</body>
+</html>
