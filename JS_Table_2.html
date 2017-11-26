@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <script>
+        function init() {
+            var elements = document.getElementById('table').children;
+            for (var i=0;i<elements.length;++i) {
+                elements[i].setAttribute("id", "tr" + (i + 1));
+            }
+        }
+
+        function highlight(id,flag) {
+            if (flag == 'over') {
+                document.getElementById(id).style.backgroundColor = 'red';
+            } else if (flag == 'out') {
+                document.getElementById(id).style.backgroundColor = 'white';
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<table border="1" >
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+    </tr>
+    </thead>
+    <tbody id="table">
+    <tr onmouseover="highlight('tr1','over')" onmouseout="highlight('tr1','out')" id="tr1">
+        <td>1</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr onmouseover="highlight('tr2','over')" onmouseout="highlight('tr2','out')">
+        <td>2</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr onmouseover="highlight('tr3','over')" onmouseout="highlight('tr3','out')">
+        <td>3</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr onmouseover="highlight('tr4','over')" onmouseout="highlight('tr4','out')">
+        <td>3</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr onmouseover="highlight('tr5','over')" onmouseout="highlight('tr5','out')">
+        <td>3</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    <tr onmouseover="highlight('tr6','over')" onmouseout="highlight('tr6','out')">
+        <td>3</td>
+        <td>马平凡</td>
+        <td>22</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
